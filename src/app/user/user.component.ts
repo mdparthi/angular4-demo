@@ -19,7 +19,7 @@ import {User} from '../model/user';
 })
 export class UserComponent implements OnInit {
   @Input('title') title : string;
-  @Input('user') user : User;
+  @Input('users') users : User[];
   @Output('childChanged') childChanged = new EventEmitter<string>();
   
 
