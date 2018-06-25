@@ -5,6 +5,12 @@
   </h1>
  
 </div>
-<app-user></app-user>
+<app-user [title]="title" 
+          [user]="user"
+          (childChanged)="changeChild($event)">
+  <header> Header Info </header>
+  <main> Main Info</main>
+  <footer class="footer-sec">Footer Info</footer>
+</app-user>
 
 

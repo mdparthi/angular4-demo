@@ -1,4 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input ,
+OnChanges,
+DoCheck,
+SimpleChanges,
+AfterContentInit,
+AfterContentChecked,
+AfterViewInit,
+AfterViewChecked,
+OnDestroy,
+SimpleChange,
+Output,
+EventEmitter} from '@angular/core';
+import {User} from '../model/user';
 
 @Component({
   selector: 'app-user',
@@ -6,20 +18,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  @Input('title') title : string;
+  @Input('user') user : User;
+  @Output('childChanged') childChanged = new EventEmitter<string>();
+  
 
-  user = {
-    firstName : "Bill",
-    lastName : "Gates",
-    dob : new Date("Jan 12, 1964"),
-    income : 50000,
-    isWorking : true,
-    company : "Microsoft",
-    image : 'assets/images/billgates.jpg'
+  onKeyup(value:  string){
+    this.childChanged.emit(value);
   }
 
-  constructor() { }
+  moreInfo(user : User) {
+    alert(`${user.firstName} is working with ${user.company} !!`);
+  }
+  constructor() { console.log("constructor ")}
 
   ngOnInit() {
   }
+
+  ngOnChanges(changes: SimpleChange){console.log('change');}
+  ngDoCheck(){console.log('docheck');}
+  ngSimpleChanges(){console.log('simple');}
+  ngAfterContentInit(){console.log('content init');}
+  ngAfterContentChecked(){console.log('content chec');}
+  ngAfterViewInit(){console.log('view init');}
+  ngAfterViewChecked(){console.log('view check');}
+  ngOnDestroy(){console.log('destroy');}
 
 }
