@@ -49,3 +49,10 @@
 <!-- <ng-content select="footer"> 
 
 </ng-content> -->
+
+<div [ngSwitch]="id">
+  <div *ngSwitchCase="'1'">One</div>
+  <div *ngSwitchCase="'2'">Two</div>
+  <div *ngSwitchCase="'3'">Three</div>
+  <div *ngSwitchDefault>Default</div>
+</div>

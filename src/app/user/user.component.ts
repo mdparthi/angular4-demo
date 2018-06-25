@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   @Input('title') title : string;
   @Input('users') users : User[];
   @Output('childChanged') childChanged = new EventEmitter<string>();
-  
+  id : number = 2;
 
   onKeyup(value:  string){
     this.childChanged.emit(value);
