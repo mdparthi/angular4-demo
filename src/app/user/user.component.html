@@ -1,3 +1,4 @@
+<!-- example for json pipe  {{ users | json}} -->
 <div class="container">
   <h1 class="text-center text-primary">
     Title from parent {{title}} 
@@ -17,17 +18,19 @@
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2">
           {{i}} <br>
-          isFirst ? {{isFirst}} <br>
-          isLast ? {{isLast}}
+          isEven  ? {{isEven }} 
             <img [src]="user.image" class="img-responsive img-rounded">
             <button (click)="moreInfo(user)"
              class="btn btn-info btn-sm">More Info</button>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h1 appHighlight [defaultColor]="myColor">{{user.firstName}} {{user.lastName}} </h1>
+            <h1 appHighlight [defaultColor]="'aqua'" [myColor]="myColor" >{{user.firstName | uppercase}} {{user.lastName | uppercase}} </h1>
             <!-- <p [ngClass]="{'feature' : false, 'transform' :true}" >Date of Birth : {{ user.dob}} </p> -->
-            <p [ngClass] = "myClasses">Date of Birth : {{ user.dob}} </p>
-            <p *ngIf="user.isWorking; else ElseTemplate">Income : {{user.income}} </p>
+            <p [ngClass] = "myClasses">Date of Birth : {{ user.dob | date : 'MM/dd/yyy'}} </p>
+           
+            <!-- <p *ngIf="user.isWorking; else ElseTemplate">Income : {{user.income}} </p> -->           
+            <p *appUnless="!user.isWorking">Income : {{user.income | currency : 'INR'}}</p>
+
             <em class="pull-right">
               Total Votes : {{user.votes}}
               <!-- <input type="number" 
@@ -38,7 +41,7 @@
         </div> 
       </div>     
           <ng-template #ElseTemplate>
-            <p>Poor guy {{user.firstName}} {{user.lastName}} is still searching Job </p>
+            <p>Poor guy {{user.firstName | uppercase}} {{user.lastName | uppercase}} is still searching Job </p>
           </ng-template>
     </li>
   </ul>

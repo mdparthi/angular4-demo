@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
   }
   myColor = 'yellow';
   
+  
   onKeyup(value:  string){
     this.childChanged.emit(value);
   }
@@ -36,18 +37,20 @@ export class UserComponent implements OnInit {
     alert(`${user.firstName} is working with ${user.company} !!`);
     this.myClasses.transform = true;
   }
-  constructor() { console.log("constructor ")}
+  constructor() { 
+    // console.log("constructor ");
+  }
 
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChange){console.log('change');}
-  ngDoCheck(){console.log('docheck');}
-  ngSimpleChanges(){console.log('simple');}
-  ngAfterContentInit(){console.log('content init');}
-  ngAfterContentChecked(){console.log('content chec');}
-  ngAfterViewInit(){console.log('view init');}
-  ngAfterViewChecked(){console.log('view check');}
-  ngOnDestroy(){console.log('destroy');}
+  // ngOnChanges(changes: SimpleChange){console.log('change');}
+  // ngDoCheck(){console.log('docheck');}
+  // ngSimpleChanges(){console.log('simple');}
+  // ngAfterContentInit(){console.log('content init');}
+  // ngAfterContentChecked(){console.log('content chec');}
+  // ngAfterViewInit(){console.log('view init');}
+  // ngAfterViewChecked(){console.log('view check');}
+  // ngOnDestroy(){console.log('destroy');}
 
 }

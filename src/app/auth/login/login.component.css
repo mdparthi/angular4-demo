@@ -1,0 +1,15 @@
+.ng-invalid.ng-touched[type="text"] {
+    border : 1px red solid;
+}
+
+.ng-valid.g-touched[type="text"] {
+    border: 1px green solid;
+}
+
+.ng-invalid.ng-touched[type="password"] {
+    border : 1px red solid;
+}
+
+.ng-valid.g-touched[type="password"] {
+    border: 1px green solid;
+}
