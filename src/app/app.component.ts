@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 // import { USER_DATA } from './data/user-data';
 import {User} from './model/user';
 import { DataService } from './services/data.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,14 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    // this.users = USER_DATA;
+    firebase.initializeApp({
+      apiKey: "AIzaSyCLXxjdXDzZ2BVSOoQEMtPyIq6iTDq_99g",
+      authDomain: "angular4demo-a9394.firebaseapp.com",
+    });
+
+    // this.users = USER_DA{TA;
     // this.users = this.dataService.getUserData();
+
     this.dataService.getHttpData()
     .subscribe(data => this.users = data)
   }
