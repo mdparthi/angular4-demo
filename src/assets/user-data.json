@@ -1,0 +1,25 @@
+{
+    "userdata" : [
+        {
+            
+            "firstName" : "Bill",
+                "lastName" : "Gates",
+                "dob" : "Jan 12, 1964",
+                "income" : 100000,
+                "isWorking" : true,
+                "company" : "Microsoft",
+                "image" : "assets/images/billgates.jpg",
+                "votes" : 11
+        },
+        {
+            "firstName" : "Bill",
+                "lastName" : "Gates",
+                "dob" : "Jan 12, 1964",
+                "income" : 100000,
+                "isWorking" : true,
+                "company" : "Microsoft",
+                "image" : "assets/images/billgates.jpg",
+                "votes" : 11
+        }
+    ]
+}

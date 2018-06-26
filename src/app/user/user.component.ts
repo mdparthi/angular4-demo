@@ -11,11 +11,13 @@ SimpleChange,
 Output,
 EventEmitter} from '@angular/core';
 import {User} from '../model/user';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers : [DataService] // injected for specific instantiation
 })
 export class UserComponent implements OnInit {
   @Input('title') title : string;
@@ -37,7 +39,12 @@ export class UserComponent implements OnInit {
     alert(`${user.firstName} is working with ${user.company} !!`);
     this.myClasses.transform = true;
   }
-  constructor() { 
+
+  increase(){
+    this.dataService.counter++;
+ }
+
+  constructor(public dataService : DataService) { 
     // console.log("constructor ");
   }
 

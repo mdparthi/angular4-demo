@@ -12,7 +12,8 @@ export class RegisterComponent implements OnInit {
   Validators.minLength(6)
   ]);
   password = new FormControl('', [
-    Validators.required
+    Validators.required,
+    this.isExclamation
   ]);
 
   registerForm : FormGroup;
@@ -26,6 +27,11 @@ export class RegisterComponent implements OnInit {
 
   register(){
     console.log(this.registerForm);
+  }
+
+  isExclamation(input : FormControl) {
+    const hasExclamation = input.value.indexOf('!') >=0;
+    return hasExclamation ? null : {'needExclamation' :  true };
   }
   ngOnInit() {
   }
