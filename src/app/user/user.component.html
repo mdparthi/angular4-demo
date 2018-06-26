@@ -24,7 +24,7 @@
              class="btn btn-info btn-sm">More Info</button>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h1 appHighlight [defaultColor]="'yellow'">{{user.firstName}} {{user.lastName}} </h1>
+            <h1 appHighlight [defaultColor]="myColor">{{user.firstName}} {{user.lastName}} </h1>
             <!-- <p [ngClass]="{'feature' : false, 'transform' :true}" >Date of Birth : {{ user.dob}} </p> -->
             <p [ngClass] = "myClasses">Date of Birth : {{ user.dob}} </p>
             <p *ngIf="user.isWorking; else ElseTemplate">Income : {{user.income}} </p>

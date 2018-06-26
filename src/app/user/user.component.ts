@@ -26,7 +26,8 @@ export class UserComponent implements OnInit {
     'feature' : true,
     'transform': false
   }
-
+  myColor = 'yellow';
+  
   onKeyup(value:  string){
     this.childChanged.emit(value);
   }
