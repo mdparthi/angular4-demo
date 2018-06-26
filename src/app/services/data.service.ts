@@ -31,6 +31,7 @@ export class DataService {
         this.httpClient.get<User[]>("https://angular4demo-a9394.firebaseio.com/userdata.json?auth=" +
                                 this.authService.getToken())
                                 .subscribe(data => console.log(data))
+
     }
     constructor(private http : Http,
                 private httpClient : HttpClient,
