@@ -22,6 +22,10 @@ export class UserComponent implements OnInit {
   @Input('users') users : User[];
   @Output('childChanged') childChanged = new EventEmitter<string>();
   id : number = 2;
+  myClasses = {
+    'feature' : true,
+    'transform': false
+  }
 
   onKeyup(value:  string){
     this.childChanged.emit(value);
@@ -29,6 +33,7 @@ export class UserComponent implements OnInit {
 
   moreInfo(user : User) {
     alert(`${user.firstName} is working with ${user.company} !!`);
+    this.myClasses.transform = true;
   }
   constructor() { console.log("constructor ")}
 
