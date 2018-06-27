@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
                 "\npassword : " + loginForm.value.password);
     this.authService.login(loginForm.value.username,
        loginForm.value.password).then((response) => {
-         this.router.navigate(['/pipe']);
+         this.router.navigate(['/pipe'], {queryParams : {page_no : 503}});
        });
 
   }
