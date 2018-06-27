@@ -35,9 +35,12 @@ export class DataService {
 
         // or for interceptor
 
-        this.httpClient.get<User[]>(
-            "https://angular4demo-a9394.firebaseio.com/userdata.json?")
-                                .subscribe(data => console.log(data))
+        // this.httpClient.get<User[]>(
+        //     "https://angular4demo-a9394.firebaseio.com/userdata.json?")
+        //                         .subscribe(data => console.log(data))
+
+       return this.httpClient.get<User[]>(
+            "https://angular4demo-a9394.firebaseio.com/userdata.json?");
     }
     constructor(private http : Http,
                 private httpClient : HttpClient,

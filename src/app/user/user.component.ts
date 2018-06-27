@@ -20,10 +20,14 @@ import { DataService } from '../services/data.service';
   providers : [DataService] // injected for specific instantiation
 })
 export class UserComponent implements OnInit {
-  @Input('title') title : string;
-  @Input('users') users : User[];
+  // @Input('title') title : string;
+  // @Input('users') users : User[];
+
+  users : User[];
+
   @Output('childChanged') childChanged = new EventEmitter<string>();
   id : number = 2;
+
   myClasses = {
     'feature' : true,
     'transform': false
@@ -49,6 +53,8 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataService.getHttpClientData()
+    .subscribe(data => this.users = data);
   }
 
   // ngOnChanges(changes: SimpleChange){console.log('change');}
