@@ -6,6 +6,8 @@ export class AuthService {
 
   token: any;
 
+  constructor() { }
+
   register(username: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(username, password)
       .then(response =>console.log(response))
@@ -35,6 +37,9 @@ export class AuthService {
 
       return this.token;
   }
-  constructor() { }
+  
+  isAuthenticated(){
+    return this.token != null;
+  }
 
 }

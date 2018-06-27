@@ -1,0 +1,12 @@
+<p>
+ Product Name {{name}} with id : {{id}} in page {{page}}
+</p>
+
+<div class="container">
+  <ul class="list-unstyled">
+    <li><a [routerLink]="['overview']">Overview</a></li>
+    <li><a [routerLink]="['spec']">Spec</a></li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

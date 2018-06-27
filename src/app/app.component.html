@@ -1,26 +1,51 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-obs-demo></app-obs-demo> -->
-<div class="container">
+
+<!-- <div class="container">
   <p>
     Counter in App Comp : {{dataService.counter}}
   </p>
   <button (click)="increase()" class="btn btn-info">counter</button>
-</div>
-<app-register></app-register>
-<app-login></app-login>
+</div> -->
+
+<!-- <app-register></app-register>
+
+<app-login></app-login> -->
+
 <!-- <app-pipe-demo></app-pipe-demo> -->
+
+
+
 <div style="text-align:center">
   <h1>
     Welcome to PRJ App
   </h1>
  
 </div>
-<app-user [title]="title" 
+
+<div class="container">
+    <ul class="list-unstyled nav navbar-nav navbar-default">
+        <!-- <li *ngIf="!authService.isAuthenticated()"><a [routerLink]="['login']">Login</a></li> -->
+      <li><a [routerLink]="['login']">Login</a></li>
+      <li><a [routerLink]="['register']">Register</a></li>
+      <li><a [routerLink]="['pipe']">Pipe Demo</a></li>
+      <li><a [routerLink]="['obs']">Obs demo</a></li>
+      <li><a [routerLink]="['user']">User Details</a></li>
+      <li><a [routerLink]="['product', 4, 'iPhone']" 
+         [queryParams]="{'page_no' : 20}">Products</a></li>
+  
+    </ul>
+  </div>
+  
+  <!-- mention the template-->
+  <router-outlet></router-outlet>
+  
+<!-- <app-user [title]="title" 
           [users]="users"
           (childChanged)="changeChild($event)">
   <header> Header Info </header>
   <main> Main Info</main>
   <footer class="footer-sec">Footer Info</footer>
-</app-user>
+</app-user> -->
 
 

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {User} from './model/user';
 import { DataService } from './services/data.service';
 import * as firebase from 'firebase';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   title = 'app';
   users : User[];
 
-  constructor(public dataService : DataService) {
+  constructor(public dataService : DataService, public authService: AuthService) {
   }
 
   ngOnInit(){
