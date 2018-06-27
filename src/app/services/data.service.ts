@@ -28,10 +28,16 @@ export class DataService {
     }
 
     getHttpClientData(){
-        this.httpClient.get<User[]>("https://angular4demo-a9394.firebaseio.com/userdata.json?auth=" +
-                                this.authService.getToken())
-                                .subscribe(data => console.log(data))
+        // this.httpClient.get<User[]>(
+        //     "https://angular4demo-a9394.firebaseio.com/userdata.json?auth=" +
+        //                         this.authService.getToken())
+        //                         .subscribe(data => console.log(data))
 
+        // or for interceptor
+
+        this.httpClient.get<User[]>(
+            "https://angular4demo-a9394.firebaseio.com/userdata.json?")
+                                .subscribe(data => console.log(data))
     }
     constructor(private http : Http,
                 private httpClient : HttpClient,
