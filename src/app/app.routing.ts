@@ -8,6 +8,7 @@ import { LoginGaurdService } from './services/login-gaurd.service';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
+import { EmployeeComponent } from './employee/employee/employee.component';
 
 export const APP_ROUTES : Routes = [
     {
@@ -51,6 +52,10 @@ export const APP_ROUTES : Routes = [
             }
         ]
 
+    },
+    {
+        path : 'employee',
+        component : EmployeeComponent
     },
     {
         path : '**',
