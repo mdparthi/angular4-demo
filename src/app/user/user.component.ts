@@ -20,7 +20,7 @@ import { DataService } from '../services/data.service';
   providers : [DataService] // injected for specific instantiation
 })
 export class UserComponent implements OnInit {
-  // @Input('title') title : string;
+  @Input('title') title : string;
   // @Input('users') users : User[];
 
   users : User[];
